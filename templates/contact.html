@@ -1,0 +1,49 @@
+<!doctype html>
+{% extends 'base.html' %}
+
+
+{% block title %} Contact {% endblock title %}
+
+
+{% block body %}
+
+<div class="container-flex  px-0">
+
+  <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+        <img src="static/111.jpg" class="d-block w-100" alt="...">
+    </div>
+      <div class="carousel-caption d-none d-md-block">
+        <h3>Contact Us</h3>
+        <p>Feel free to contact us.</p>
+      </div>
+    </div>
+</div>
+</div>
+<div class="container mb-3 py-4">
+<form method="post" action="/contact">
+{% csrf_token  %}
+    <div class="form-group">
+    <label for="name">Name</label>
+    <input type="text" class="form-control" id="name" name="name" placeholder="enter your name">
+    </div>
+    <div class="form-group">
+    <label for="exampleFormControlInput1">Email address</label>
+    <input type="email" class="form-control" id="exampleFormControlInput1" name="email" placeholder="enter your email address">
+    </div>
+    <div class="form-group">
+    <label for="phone">Phone</label>
+    <input type="number" class="form-control" id="phone" name="phone" placeholder="enter your phone number">
+  </div>
+  <div class="form-group">
+    <label for="msg">Enter your message</label>
+    <textarea class="form-control" id="msg" name="msg" rows="4"></textarea>
+  </div>
+   <button class="btn btn-primary" type="submit">Submit</button>
+</form>
+
+</div>
+</div>
+{% endblock body %}
+
